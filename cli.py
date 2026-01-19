@@ -9,7 +9,7 @@ from simple_crypto import (
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Simple crypto tool (Caesar and XOR). Not secure, for learning only."
+        description="Simple crypto Caesar and XOR"
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -36,7 +36,7 @@ def main():
     elif args.command == "xor":
         if args.mode == "enc":
             cipher = xor_encrypt(args.text, args.key)
-            # выводим в hex, чтобы было удобно видеть
+            # выводим в hex
             print(cipher.hex())
         else:
             cipher_bytes = bytes.fromhex(args.text)
